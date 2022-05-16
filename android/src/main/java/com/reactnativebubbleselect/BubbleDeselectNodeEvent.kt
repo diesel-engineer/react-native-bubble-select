@@ -27,6 +27,7 @@ class BubbleDeselectNodeEvent(viewId: Int): Event<BubbleDeselectNodeEvent>(viewI
     val eventData = Arguments.createMap()
     eventData.putString("text", node.text)
     eventData.putString("id", node.id)
+    eventData.putString("imageName", node.imageName)
     eventData.putInt("target", viewTag)
 
     rctEventEmitter?.receiveEvent(viewTag, eventName, eventData)

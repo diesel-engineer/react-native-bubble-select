@@ -6,23 +6,23 @@ import android.widget.FrameLayout
 import com.facebook.react.bridge.LifecycleEventListener
 import com.facebook.react.bridge.ReactContext
 import com.facebook.react.uimanager.UIManagerModule
-import com.facebook.react.uimanager.events.RCTEventEmitter
+import com.igalata.bubblepicker.BubblePickerListener
 import com.igalata.bubblepicker.adapter.BubblePickerAdapter
 import com.igalata.bubblepicker.model.BubbleGradient
 import com.igalata.bubblepicker.model.PickerItem
 import com.igalata.bubblepicker.rendering.BubblePicker
-import com.igalata.bubblepicker.BubblePickerListener
 
-class BubbleSelectView(context: ReactContext): FrameLayout(context), LifecycleEventListener, BubblePickerListener {
+class BubbleSelectView(context: ReactContext) : FrameLayout(context), LifecycleEventListener,
+  BubblePickerListener {
   val bubblePicker: BubblePicker
   val nodes: ArrayList<BubbleSelectNodeView> = ArrayList()
 
   init {
     inflate(context, R.layout.bubble_view, this)
-    bubblePicker = findViewById(R.id.bubble_picker);
-    bubblePicker.listener = this;
+    bubblePicker = findViewById(R.id.bubble_picker)
+    bubblePicker.listener = this
     bubblePicker.maxSelectedCount = 10000
-    context.addLifecycleEventListener(this);
+    context.addLifecycleEventListener(this)
     setupBubblePickerAdapter()
   }
 
@@ -38,16 +38,29 @@ class BubbleSelectView(context: ReactContext): FrameLayout(context), LifecycleEv
           if (node.fontFamily !== null) {
             typeface = Typeface.create(node.fontFamily, node.fontStyle)
           }
+          borderWidth = node.borderWidth
+          borderColor = Color.parseColor(node.borderColor)
           textColor = Color.parseColor(node.fontColor)
-
           if (node.gradient !== null) {
-            gradient = node.getGradient();
+            gradient = node.getGradient()
           } else if (node.color !== null) {
             gradient = BubbleGradient(
               Color.parseColor(node.color),
               Color.parseColor(node.color),
               BubbleGradient.VERTICAL
             )
+          }
+          val resId = resources.getIdentifier(
+            node.imageName,
+            "drawable",
+            context.packageName
+          )
+          if (resId > 0) {
+            try {
+              backgroundImage = resources.getDrawable(resId)
+            } catch (ex: Exception) {
+
+            }
           }
         }
       }

@@ -5,7 +5,7 @@ import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
 
-class BubbleSelectNodeViewManager: SimpleViewManager<BubbleSelectNodeView>() {
+class BubbleSelectNodeViewManager : SimpleViewManager<BubbleSelectNodeView>() {
   override fun getName(): String {
     return "RNBubbleSelectNodeView"
   }
@@ -18,6 +18,12 @@ class BubbleSelectNodeViewManager: SimpleViewManager<BubbleSelectNodeView>() {
   fun setText(view: BubbleSelectNodeView, text: String?) {
     if (text == null) return
     view.text = text
+  }
+
+  @ReactProp(name = "imageName")
+  fun setNameImage(view: BubbleSelectNodeView, imageName: String?) {
+    if (imageName == null) return
+    view.imageName = imageName
   }
 
   @ReactProp(name = "id")
@@ -38,8 +44,20 @@ class BubbleSelectNodeViewManager: SimpleViewManager<BubbleSelectNodeView>() {
 
   @ReactProp(name = "fontColor")
   fun setFontColor(view: BubbleSelectNodeView, fontColor: String?) {
-    if (fontColor == null) return;
+    if (fontColor == null) return
     view.fontColor = fontColor
+  }
+
+  @ReactProp(name = "borderColor")
+  fun setBorderColor(view: BubbleSelectNodeView, borderColor: String?) {
+    if (borderColor == null) return
+    view.borderColor = borderColor
+  }
+
+  @ReactProp(name = "borderWidth")
+  fun setBorderWidth(view: BubbleSelectNodeView, borderWidth: Double) {
+    if (borderWidth == null) return
+    view.borderWidth = borderWidth.toFloat()
   }
 
   @ReactProp(name = "color")
