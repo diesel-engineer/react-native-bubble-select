@@ -24,10 +24,21 @@ export default function randomCity() {
     };
   }
 
+  const avatars = [
+    'bn_avatar_artist_binz',
+    'bn_avatar_artist_denvau',
+    'bn_avatar_artist_haanhtuan',
+    'bn_avatar_artist_hoangthuylinh',
+    'bn_avatar_artist_lecattrongly',
+    'bn_avatar_artist_mtp',
+    'bn_avatar_artist_mytam',
+  ];
+
   return Platform.select({
     ios: {
       id: `${city}--${i}`,
       text: city,
+      imageName: avatars[i % avatars.length],
       color: randomColor(),
       selectedColor: randomColor(),
       selectedScale: Math.floor(Math.random() * 1.5) + 1.2,
@@ -35,6 +46,7 @@ export default function randomCity() {
     android: {
       id: `${city}--${i}`,
       text: city,
+      imageName: avatars[i % avatars.length],
       ...color,
     },
   });

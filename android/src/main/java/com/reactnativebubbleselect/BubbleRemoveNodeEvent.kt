@@ -27,6 +27,7 @@ class BubbleRemoveNodeEvent(viewId: Int): Event<BubbleRemoveNodeEvent>(viewId) {
     val eventData = Arguments.createMap()
     eventData.putString("id", item.id)
     eventData.putString("text", item.text)
+    eventData.putString("imageName", item.imageName)
     eventData.putInt("target", viewTag)
 
     rctEventEmitter?.receiveEvent(viewTag, eventName, eventData)

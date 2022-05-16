@@ -7,15 +7,18 @@ import com.facebook.react.bridge.ReactContext
 import com.facebook.react.bridge.ReadableMap
 import com.igalata.bubblepicker.model.BubbleGradient
 
-class BubbleSelectNodeView(context: ReactContext): LinearLayout(context) {
+class BubbleSelectNodeView(context: ReactContext) : LinearLayout(context) {
   lateinit var id: String
   lateinit var text: String
+  lateinit var imageName: String
   var fontFamily: String? = null
   var fontStyle: Int = Typeface.NORMAL
   var fontSize: Float = 14f
   var fontColor: String = "#ffffff"
   var color: String? = null
   var gradient: ReadableMap? = null
+  var borderWidth: Float = 4f
+  var borderColor: String = "#41EB91"
 
   init {
     inflate(context, R.layout.bubble_node, this)
@@ -31,13 +34,13 @@ class BubbleSelectNodeView(context: ReactContext): LinearLayout(context) {
   }
 
   fun getGradient(): BubbleGradient? {
-    val mGradient = this.gradient;
+    val mGradient = this.gradient
     if (mGradient === null) {
       return null
     }
 
-    val startColor = mGradient.getString("startColor");
-    val endColor = mGradient.getString("endColor");
+    val startColor = mGradient.getString("startColor")
+    val endColor = mGradient.getString("endColor")
     val direction = when (mGradient.getString("direction")) {
       "horizontal" -> BubbleGradient.HORIZONTAL
       else -> BubbleGradient.VERTICAL

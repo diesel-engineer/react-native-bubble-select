@@ -5,6 +5,7 @@ const RNBubble = requireNativeComponent('RNBubbleSelectNodeView');
 
 export interface BubbleNode {
   text: string;
+  imageName: string;
   id: string;
 }
 
@@ -35,6 +36,7 @@ export type BubbleProps = BubbleNode & {
 
 const Bubble = ({
   text,
+  imageName,
   color,
   radius,
   marginScale,
@@ -58,6 +60,7 @@ const Bubble = ({
   const props = Platform.select({
     ios: {
       text,
+      imageName,
       color,
       radius,
       marginScale,
@@ -78,6 +81,7 @@ const Bubble = ({
     },
     android: {
       text,
+      imageName,
       color,
       id,
       fontFamily: fontName,
@@ -85,6 +89,8 @@ const Bubble = ({
       fontColor,
       fontStyle,
       gradient,
+      borderColor,
+      borderWidth,
     },
   });
 

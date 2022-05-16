@@ -87,10 +87,13 @@ export default function App() {
               key={city.id}
               id={city.id}
               text={city.text}
+              imageName={city.imageName}
               color={city.color}
               selectedColor={city.selectedColor}
               selectedScale={city.selectedScale}
               gradient={city.gradient}
+              borderColor="#41EB91"
+              borderWidth={8}
             />
           ))}
         </BubbleSelect>
