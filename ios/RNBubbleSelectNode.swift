@@ -13,6 +13,7 @@ import SpriteKit
 class RNBubbleSelectNodeView: UIView {
   var id: String?
   var text: String?
+  var imageName: String?
   var image: UIImage?
   var color: UIColor?
   var radius: CGFloat?
@@ -60,7 +61,8 @@ class RNBubbleSelectNodeView: UIView {
     node.text = text
     node.padding = padding ?? Node.Defaults.padding
     node.scaleToFitContent = scaleToFitContent
-    
+    node.imageName = imageName
+      
     if let selectedScale = selectedScale {
       node.selectedScale = selectedScale
     }
@@ -93,9 +95,14 @@ extension RNBubbleSelectNodeView {
     self.id = id
   }
   
+    @objc func setImageName(_ imageName: String?) {
+        self.imageName = imageName
+        updateNode()
+    }
+
   @objc func setText(_ text: String?) {
-    self.text = text
-    updateNode()
+      self.text = text
+      updateNode()
   }
   
   @objc func setImage(_ image: UIImage?) {

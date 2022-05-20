@@ -30,8 +30,26 @@ import SpriteKit
     open var text: String? {
         get { return label.text }
         set {
-            label.text = newValue
-            resize()
+            label.text = ""
+            //resize()
+        }
+    }
+    
+    open var imageName: String? {
+        didSet {
+            guard let imageName = imageName else { return }
+            guard let image = UIImage(named: imageName) else { return }
+            self.fillTexture = SKTexture(image: image.aspectFill(self.frame.size))
+            
+            //            DispatchQueue.global().async {
+            //                guard let imageURL = self.imageURL, let url = URL(string: imageURL), let data = try? Data(contentsOf: url) else { return }
+            //
+            //                let image = UIImage(data: data)
+            //
+            //                DispatchQueue.main.async {
+            //                    self.fillTexture = SKTexture(image: image!.aspectFill(self.frame.size))
+            //                }
+            //            }
         }
     }
     
@@ -200,10 +218,10 @@ import SpriteKit
         static let fontColor = UIColor.white
         static let fontSize = CGFloat(12)
         static let color = UIColor.clear
-        static let marginScale = CGFloat(1.01)
+        static let marginScale = CGFloat(1.1)
         static let scaleToFitContent = false // backwards compatability
-        static let padding = CGFloat(20)
-        static let borderWidth = CGFloat(0)
+        static let padding = CGFloat(60)
+        static let borderWidth = CGFloat(3)
         static let borderColor = UIColor.clear
     }
     
@@ -308,6 +326,7 @@ import SpriteKit
     open func selectedAnimation() {
         self.originalFontColor = fontColor
         self.originalColor = fillColor
+        self.borderColor = UIColor.init(red: 65/255, green: 235/255, blue: 145/255, alpha: 1)
         
         let scaleAction = SKAction.scale(to: selectedScale, duration: animationDuration)
         
@@ -323,10 +342,6 @@ import SpriteKit
         } else {
           run(scaleAction)
         }
-
-        if let texture = texture {
-          fillTexture = texture
-        }
     }
     
     /**
@@ -334,7 +349,8 @@ import SpriteKit
      */
     open func deselectedAnimation() {
         let scaleAction = SKAction.scale(to: deselectedScale, duration: animationDuration)
-        
+        self.borderColor = .clear
+
         if let selectedColor = selectedColor {
           run(.group([
             scaleAction,
@@ -343,12 +359,11 @@ import SpriteKit
         } else {
           run(scaleAction)
         }
-        
+
         if let selectedFontColor = selectedFontColor {
           label.run(.colorTransition(from: selectedFontColor, to: originalFontColor, duration: animationDuration))
         }
 
-        self.fillTexture = nil
     }
     
     /**

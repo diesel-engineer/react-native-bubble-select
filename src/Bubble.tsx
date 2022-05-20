@@ -12,6 +12,7 @@ export interface BubbleNode {
 export type BubbleProps = BubbleNode & {
   color?: string;
   radius?: number;
+  imageName?: string;
   marginScale?: number;
   fontName?: string;
   fontSize?: number;

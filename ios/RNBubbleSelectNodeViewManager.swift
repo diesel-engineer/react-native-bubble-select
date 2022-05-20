@@ -13,6 +13,7 @@ class RNBubbleSelectNodeViewManager: RCTViewManager {
   
   var id: String?
   var text: String?
+  var imageName: String?
   var image: UIImage?
   var color: UIColor?
   var radius: CGFloat?
@@ -29,6 +30,7 @@ class RNBubbleSelectNodeViewManager: RCTViewManager {
     node.id = id
     node.text = text
     node.image = image
+    node.imageName = imageName
     node.color = color
     node.radius = radius
     node.marginScale = marginScale
@@ -49,6 +51,10 @@ extension RNBubbleSelectNodeViewManager {
   
   @objc func setText(_ text: String?) {
     self.text = text
+  }
+    
+  @objc func setImageName(_ imageName: String?) {
+    self.imageName = imageName
   }
   
   @objc func setImage(_ image: UIImage?) {
