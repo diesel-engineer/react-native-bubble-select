@@ -126,5 +126,5 @@ dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation 'com.github.duongnguyen8onemount:Bubble-Picker:oneu-border-SNAPSHOT'
+  implementation 'com.github.duongnguyen8onemount:Bubble-Picker:oneu-fixed-SNAPSHOT'
 }
