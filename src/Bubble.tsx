@@ -5,7 +5,6 @@ const RNBubble = requireNativeComponent('RNBubbleSelectNodeView');
 
 export interface BubbleNode {
   text: string;
-  imageName: string;
   id: string;
 }
 
