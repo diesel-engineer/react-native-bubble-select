@@ -88,8 +88,8 @@ export default function App() {
               id={city.id}
               text={city.text}
               imageName={city.imageName}
-              color={city.color}
-              selectedColor={city.selectedColor}
+              selectedColor="#ffffffff"
+              color="#ffffffff"
               selectedScale={city.selectedScale}
               gradient={city.gradient}
               borderColor="#41EB91"
