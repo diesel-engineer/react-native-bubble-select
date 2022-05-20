@@ -16,9 +16,9 @@
 		9594C7E6243103DA00EAE357 /* MagneticViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594C7E2243103D900EAE357 /* MagneticViewExtension.swift */; };
 		9594C7E7243103DA00EAE357 /* RNBubbleSelectNodeViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594C7E3243103DA00EAE357 /* RNBubbleSelectNodeViewManager.swift */; };
 		9594C7E8243103DA00EAE357 /* RNBubbleSelectNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594C7E4243103DA00EAE357 /* RNBubbleSelectNode.swift */; };
-		9594C7E9243103DA00EAE357 /* RNBubbleSelectViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594C7E5243103DA00EAE357 /* RNBubbleSelectViewManager.swift */; };
 		9594C7F02431047200EAE357 /* RNBubbleSelectNodeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594C7EE2431047100EAE357 /* RNBubbleSelectNodeViewManager.m */; };
 		9594C7F12431047200EAE357 /* RNBubbleSelectViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594C7EF2431047200EAE357 /* RNBubbleSelectViewManager.m */; };
+		FCF3601B283757DB00676DFB /* RNBubbleSelectViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF3601A283757DB00676DFB /* RNBubbleSelectViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,9 +45,9 @@
 		9594C7E2243103D900EAE357 /* MagneticViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagneticViewExtension.swift; sourceTree = "<group>"; };
 		9594C7E3243103DA00EAE357 /* RNBubbleSelectNodeViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBubbleSelectNodeViewManager.swift; sourceTree = "<group>"; };
 		9594C7E4243103DA00EAE357 /* RNBubbleSelectNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBubbleSelectNode.swift; sourceTree = "<group>"; };
-		9594C7E5243103DA00EAE357 /* RNBubbleSelectViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNBubbleSelectViewManager.swift; sourceTree = "<group>"; };
 		9594C7EE2431047100EAE357 /* RNBubbleSelectNodeViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBubbleSelectNodeViewManager.m; sourceTree = "<group>"; };
 		9594C7EF2431047200EAE357 /* RNBubbleSelectViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBubbleSelectViewManager.m; sourceTree = "<group>"; };
+		FCF3601A283757DB00676DFB /* RNBubbleSelectViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNBubbleSelectViewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 				9594C7EF2431047200EAE357 /* RNBubbleSelectViewManager.m */,
 				9594C7E4243103DA00EAE357 /* RNBubbleSelectNode.swift */,
 				9594C7E3243103DA00EAE357 /* RNBubbleSelectNodeViewManager.swift */,
-				9594C7E5243103DA00EAE357 /* RNBubbleSelectViewManager.swift */,
+				FCF3601A283757DB00676DFB /* RNBubbleSelectViewManager.swift */,
 				9594C7D92431020E00EAE357 /* BubbleSelect-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
@@ -157,7 +157,6 @@
 			files = (
 				9594C7E8243103DA00EAE357 /* RNBubbleSelectNode.swift in Sources */,
 				95899B65243399A600F2490D /* Node.swift in Sources */,
-				9594C7E9243103DA00EAE357 /* RNBubbleSelectViewManager.swift in Sources */,
 				9594C7F02431047200EAE357 /* RNBubbleSelectNodeViewManager.m in Sources */,
 				9594C7E7243103DA00EAE357 /* RNBubbleSelectNodeViewManager.swift in Sources */,
 				95899B63243399A600F2490D /* SKMultilineLabelNode.swift in Sources */,
@@ -166,6 +165,7 @@
 				9594C7E6243103DA00EAE357 /* MagneticViewExtension.swift in Sources */,
 				95899B67243399A600F2490D /* Magnetic.swift in Sources */,
 				95899B62243399A600F2490D /* Extensions.swift in Sources */,
+				FCF3601B283757DB00676DFB /* RNBubbleSelectViewManager.swift in Sources */,
 				95899B64243399A600F2490D /* MagneticView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
